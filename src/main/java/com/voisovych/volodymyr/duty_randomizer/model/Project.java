@@ -2,7 +2,15 @@ package com.voisovych.volodymyr.duty_randomizer.model;
 
 import lombok.Data;
 
-import javax.persistence.*;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+import java.util.Set;
 
 @Data
 @Entity
@@ -17,7 +25,7 @@ public class Project {
     @Column(name = "name")
     private String name;
 
-    @OneToOne(mappedBy = "project")
+    @OneToMany(mappedBy = "project")
     @Transient
-    private Team team;
+    private Set<Team> team;
 }

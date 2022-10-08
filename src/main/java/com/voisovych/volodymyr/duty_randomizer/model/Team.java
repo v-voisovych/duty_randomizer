@@ -2,7 +2,17 @@ package com.voisovych.volodymyr.duty_randomizer.model;
 
 import lombok.Data;
 
-import javax.persistence.*;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
 
 @Data
 @Entity
@@ -20,10 +30,10 @@ public class Team {
     @Column(name = "projectId")
     private int projectId;
 
-    @OneToOne(mappedBy="teamMate")
+    @OneToMany(mappedBy="teamMate")
     private TeamMate teamMate;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "projectId", referencedColumnName = "id")
     @Transient
     private Project project;

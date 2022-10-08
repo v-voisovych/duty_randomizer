@@ -16,6 +16,7 @@
     <properties>
         <java.version>11</java.version>
 		<hibernate.core.version>6.1.4.Final</hibernate.core.version>
+		<org.springframework.data.version>2.7.3</org.springframework.data.version>
     </properties>
     <dependencies>
         <!--Spring-->
@@ -23,7 +24,13 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-		<!--Lombok-->
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-jpa</artifactId>
+            <version>${org.springframework.data.version}</version>
+        </dependency>
+
+        <!--Lombok-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
