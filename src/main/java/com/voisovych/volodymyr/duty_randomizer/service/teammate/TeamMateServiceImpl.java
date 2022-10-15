@@ -17,4 +17,9 @@ public class TeamMateServiceImpl implements TeamMateService {
     public TeamMate findByFirsNameAndSecondName(String firstName, String secondName) {
         return repository.findByFirsNameAndSecondName(firstName, secondName);
     }
+
+    @Override
+    public Iterable<TeamMate> findAll() {
+        return repository.findAll();
+    }
 }

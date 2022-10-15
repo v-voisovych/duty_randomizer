@@ -17,4 +17,9 @@ public class ProjectServiceImpl implements ProjectService{
     public Project findByName(String name) {
         return repository.findByName(name);
     }
+
+    @Override
+    public Iterable<Project> findAll() {
+        return repository.findAll();
+    }
 }

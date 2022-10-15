@@ -5,4 +5,6 @@ import com.voisovych.volodymyr.duty_randomizer.model.Project;
 public interface ProjectService {
 
     Project findByName(String name);
+
+    Iterable<Project> findAll();
 }

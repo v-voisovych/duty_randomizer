@@ -17,4 +17,9 @@ public class ActivityServiceImpl implements ActivityService {
     public Activity findByName(String name) {
         return repository.findByName(name);
     }
+
+    @Override
+    public Iterable<Activity> findAll() {
+        return repository.findAll();
+    }
 }

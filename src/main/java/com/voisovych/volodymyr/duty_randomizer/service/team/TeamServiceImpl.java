@@ -17,4 +17,9 @@ public class TeamServiceImpl implements TeamService{
     public Team findByName(String name) {
         return repository.findByName(name);
     }
+
+    @Override
+    public Iterable<Team> findAll() {
+        return repository.findAll();
+    }
 }
