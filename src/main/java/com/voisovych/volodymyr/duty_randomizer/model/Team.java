@@ -11,12 +11,12 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Transient;
+import java.util.Set;
 
 
 @Data
 @Entity
-@Table(name="Team")
+@Table(name = "team")
 public class Team {
 
     @Id
@@ -27,14 +27,13 @@ public class Team {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "projectId")
+    @Column(name = "project_id", insertable = false, updatable = false)
     private int projectId;
 
-    @OneToMany(mappedBy="teamMate")
-    private TeamMate teamMate;
+    @OneToMany(mappedBy = "team")
+    private Set<TeamMate> teamMate;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "projectId", referencedColumnName = "id")
-    @Transient
+    @JoinColumn(name = "project_id", referencedColumnName = "id")
     private Project project;
 }

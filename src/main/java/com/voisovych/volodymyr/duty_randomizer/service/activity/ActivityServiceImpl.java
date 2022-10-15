@@ -5,7 +5,7 @@ import com.voisovych.volodymyr.duty_randomizer.repository.activity.ActivityRepos
 import org.springframework.stereotype.Service;
 
 @Service
-public class ActivityServiceImpl implements ActivityService{
+public class ActivityServiceImpl implements ActivityService {
 
     private final ActivityRepository repository;
 
