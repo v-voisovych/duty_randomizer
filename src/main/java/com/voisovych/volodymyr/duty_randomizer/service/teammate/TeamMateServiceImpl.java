@@ -22,4 +22,14 @@ public class TeamMateServiceImpl implements TeamMateService {
     public Iterable<TeamMate> findAll() {
         return repository.findAll();
     }
+
+    @Override
+    public TeamMate save(TeamMate teamMate) {
+        return repository.save(teamMate);
+    }
+
+    @Override
+    public void delete(TeamMate teamMate) {
+        repository.delete(teamMate);
+    }
 }

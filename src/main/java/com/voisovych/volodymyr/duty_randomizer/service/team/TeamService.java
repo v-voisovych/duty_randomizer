@@ -7,4 +7,8 @@ public interface TeamService {
     Team findByName(String name);
 
     Iterable<Team> findAll();
+
+    Team save(Team team);
+
+    void delete(Team team);
 }

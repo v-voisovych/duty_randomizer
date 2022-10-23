@@ -22,4 +22,14 @@ public class ActivityServiceImpl implements ActivityService {
     public Iterable<Activity> findAll() {
         return repository.findAll();
     }
+
+    @Override
+    public Activity save(Activity activity) {
+        return repository.save(activity);
+    }
+
+    @Override
+    public void delete(Activity activity) {
+        repository.delete(activity);
+    }
 }

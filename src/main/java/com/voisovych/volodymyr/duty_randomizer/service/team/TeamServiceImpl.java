@@ -5,7 +5,7 @@ import com.voisovych.volodymyr.duty_randomizer.repository.team.TeamRepository;
 import org.springframework.stereotype.Service;
 
 @Service
-public class TeamServiceImpl implements TeamService{
+public class TeamServiceImpl implements TeamService {
 
     private final TeamRepository repository;
 
@@ -21,5 +21,15 @@ public class TeamServiceImpl implements TeamService{
     @Override
     public Iterable<Team> findAll() {
         return repository.findAll();
+    }
+
+    @Override
+    public Team save(Team team) {
+        return repository.save(team);
+    }
+
+    @Override
+    public void delete(Team team) {
+        repository.delete(team);
     }
 }

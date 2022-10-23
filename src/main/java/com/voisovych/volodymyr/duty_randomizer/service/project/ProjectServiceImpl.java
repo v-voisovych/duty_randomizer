@@ -5,7 +5,7 @@ import com.voisovych.volodymyr.duty_randomizer.repository.project.ProjectReposit
 import org.springframework.stereotype.Service;
 
 @Service
-public class ProjectServiceImpl implements ProjectService{
+public class ProjectServiceImpl implements ProjectService {
 
     private final ProjectRepository repository;
 
@@ -21,5 +21,15 @@ public class ProjectServiceImpl implements ProjectService{
     @Override
     public Iterable<Project> findAll() {
         return repository.findAll();
+    }
+
+    @Override
+    public Project save(Project project) {
+        return repository.save(project);
+    }
+
+    @Override
+    public void delete(Project project) {
+        repository.delete(project);
     }
 }

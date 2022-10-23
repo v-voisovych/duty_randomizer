@@ -7,4 +7,8 @@ public interface TeamMateService {
     TeamMate findByFirsNameAndSecondName(String firstName, String secondName);
 
     Iterable<TeamMate> findAll();
+
+    TeamMate save(TeamMate teamMate);
+
+    void delete(TeamMate teamMate);
 }

@@ -7,4 +7,8 @@ public interface ProjectService {
     Project findByName(String name);
 
     Iterable<Project> findAll();
+
+    Project save(Project project);
+
+    void delete(Project project);
 }
